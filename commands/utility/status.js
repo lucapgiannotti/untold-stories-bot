@@ -1,6 +1,5 @@
 const os = require('os');
 const Discord = require('discord.js');
-const ws = require('ws');
 const package = require('../../package.json');
 
 module.exports = {
