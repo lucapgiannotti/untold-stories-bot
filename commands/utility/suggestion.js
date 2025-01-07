@@ -1,5 +1,5 @@
 const Discord = require('discord.js');
-const { ApplicationCommandOptionType } = require('discord.js');
+const { ApplicationCommandOptionType, MessageFlags } = require('discord.js');
 
 module.exports = {
     name: 'suggestion',
@@ -21,6 +21,6 @@ module.exports = {
             .setDescription(`**Suggestion:** ${suggestion}`)
             .setTimestamp()
         developer.send({ embeds: [embed]});
-        inter.reply({ content: "Your suggestion has been sent to the developers via DM!"})
+        inter.reply({ content: "Your suggestion has been sent to the developers via DM!", flags: MessageFlags.Ephemeral });
     },
 };

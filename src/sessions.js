@@ -9,7 +9,6 @@ function updateUserSession(userId, role, content) {
         sessions[userId] = { messages: [] };
     }
     sessions[userId].messages.push({ role, content });
-    console.log(sessions)
 }
 
 function deleteUserSession(userId) {

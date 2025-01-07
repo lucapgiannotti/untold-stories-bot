@@ -51,6 +51,7 @@ module.exports = {
             let user_message = message.content;
             const messageChannelId = message.channel.id;
             if (user_message === "exit") {
+                message.reply(`**${message.author.displayName}**, you have exited the text adventure. Your session has been cleared.`);
                 deleteUserSession(userId);
                 return;
             }

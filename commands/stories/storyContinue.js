@@ -42,7 +42,8 @@ module.exports = async function storyContinue({client, inter}, user_message, cha
     collector.on('collect', async (message) => {
         let user_message = message.content;
         const messageChannelId = message.channel.id;
-        if (user_message === "exit") {
+        if (user_message.toLowerCase() === "exit") {
+            message.reply(`**${message.author.displayName}**, you have exited the text adventure. Your session has been cleared.`);
             deleteUserSession(userId);
             return;
         }
