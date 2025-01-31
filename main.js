@@ -17,4 +17,5 @@ client.config = require('./config');
 require('./src/loader');
 require('./src/events');
 console.log(client.channels.cache.size);
-client.login(client.config.app.token);
+
+client.login(client.config.app.token).then(r => console.log('Logged in!')).catch(console.error);
