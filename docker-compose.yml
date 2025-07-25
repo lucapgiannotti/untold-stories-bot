@@ -1,0 +1,23 @@
+services:
+  untold-stories-bot:
+    build:
+      context: .
+      target: production
+    container_name: untold-stories-bot
+    restart: unless-stopped
+    env_file:
+      - .env
+    volumes:
+      # Mount a volume for persistent database storage
+      - ./data:/app/data
+    environment:
+      - NODE_ENV=production
+    # Uncomment if you need to expose ports for health checks
+    # ports:
+    #   - "3000:3000"
+    networks:
+      - bot-network
+
+networks:
+  bot-network:
+    driver: bridge

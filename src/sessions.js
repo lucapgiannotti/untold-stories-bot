@@ -1,5 +1,12 @@
 const { QuickDB } = require('quick.db');
-const db = new QuickDB();
+const path = require('path');
+
+// Use a data directory for persistent storage in Docker
+const dbPath = process.env.NODE_ENV === 'production' 
+    ? path.join('/app/data', 'database.sqlite')
+    : './database.sqlite';
+
+const db = new QuickDB({ filePath: dbPath });
 
 async function getUserSession(guildId) {
     const session = await db.get(guildId);

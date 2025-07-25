@@ -18,7 +18,7 @@ module.exports = async function storyContinue({client, inter}, user_message, cha
 
     // Generate the assistant's response
     const response = await openai.chat.completions.create({
-        model: "gpt-3.5-turbo",
+        model: "o4-mini",
         messages: userSession.messages,
         response_format: {
             "type": "text"

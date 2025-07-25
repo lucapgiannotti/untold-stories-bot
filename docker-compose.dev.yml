@@ -1,0 +1,15 @@
+version: '3.8'
+
+services:
+  untold-stories-bot:
+    build:
+      context: .
+      target: development
+    volumes:
+      # Mount source code for development with hot reloading
+      - .:/app
+      - /app/node_modules
+    environment:
+      - NODE_ENV=development
+    # Override the command for development
+    command: ["npm", "run", "dev"]

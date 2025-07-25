@@ -4,6 +4,8 @@
   "description": "TBD",
   "main": "main.js",
   "scripts": {
+    "start": "node main.js",
+    "dev": "node main.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Luca Giannotti",

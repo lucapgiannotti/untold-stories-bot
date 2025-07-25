@@ -1,0 +1,2 @@
+# This directory contains the persistent database storage for the bot
+# The database.sqlite file will be created here when the bot runs
